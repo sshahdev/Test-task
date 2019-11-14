@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12 street-form">
+    <form [formGroup]="streetForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-6">
+          <button type="submit" class="btn btn-primary" [disabled]="!streetForm.valid">Save</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="form-group">
+            <label for="name">Street Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="form-group">
+            <label for="postalCode">Postal Code</label>
+            <input type="number" class="form-control" formControlName="postalCode">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select  formControlName="country" class="form-control">
+                <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+              </select>
+            <!-- <input type="text" class="form-control" formControlName="country"> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" formControlName="city">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

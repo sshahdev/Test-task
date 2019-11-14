@@ -1,0 +1,9 @@
+
+<a class="list-group-item clearfix" routerLinkActive="active" style="cursor: pointer;"
+*ngFor="let street of streets">
+  <div class="pull-left street-div">
+      <h4 class="list-group-item-heading street-text" (click)="onStreetClick(street._id)">{{street.name}}</h4>
+      <button class="btn btn-danger delete-btn" (click)="onDeleteStreet(street._id)">Delete Street</button>
+      <!-- <p class="list-group-item-description">{{street.postalCode}}</p> -->
+  </div>
+</a>

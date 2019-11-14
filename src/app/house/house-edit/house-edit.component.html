@@ -1,0 +1,115 @@
+
+      <div class="container">
+     <form [formGroup]="houseForm" (ngSubmit)="onSubmit()">
+     
+            <button type="submit" class="btn btn-primary" [disabled]="!houseForm.valid">Save</button>&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+         
+        <br/>
+       
+        <div class="row">
+          <div class="col-md-12">
+            <div class="input-category">
+              <div class="row">
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <label>Street</label>&nbsp;&nbsp;&nbsp;
+                      <select id="streetData" *ngIf="streets" formControlName="streetName" class="form-control">
+                        <option *ngFor="let street of streets" [value]="street.name">{{street.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                  </div>
+                </div>
+              </div>      
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <label for="houseNo">House Number</label>
+                    <input type="text" class="form-control" formControlName="houseNo">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-category">
+                  <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="windowWidth">Window Width</label>
+                          <input type="number" class="form-control" formControlName="windowWidth">
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="windowHeight">Window Height</label>
+                            <input type="number" class="form-control" formControlName="windowHeight">
+                          </div>
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="windowSize">Window Size</label>
+                          <select formControlName="windowSize" class="form-control">
+                              <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+                          </select>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-category">
+                  <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="doorWidth">Door Width</label>
+                          <input type="number" class="form-control" formControlName="doorWidth">
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="doorHeight">Door Height</label>
+                          <input type="number" class="form-control" formControlName="doorHeight">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="doorSize">Door Size</label>
+                          <select formControlName="doorSize" class="form-control">
+                            <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+                          </select>
+                          <!-- <input type="text" class="form-control" formControlName="doorSize" placeholder="Large | Medium | Small"> -->
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="sideOfHouse">sideOfHouse</label>
+                          <select formControlName="sideOfHouse" class="form-control">
+                              <option value="Rear">Rear</option>
+                              <option value="Front">Front</option>
+                            </select>
+                          <!-- <input type="text" class="form-control" formControlName="sideOfHouse" placeholder="Rear | Front"> -->
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+ 

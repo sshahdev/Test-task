@@ -1,0 +1,13 @@
+.street-div{
+    /* display: inline !important; */
+    width: 100%;
+}
+.delete-btn{
+    float: right !important;
+    /* width: 50% !important; */
+}
+.street-text{
+    display: inline-block;
+    width: 75% !important;
+    padding: 10px;
+}

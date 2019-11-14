@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>Street</th>
+    <th>Name</th>
+    <th>No</th>
+    <th>Window Width</th>
+    <th>Window Height</th>
+    <th>Window Size</th>
+    <th>Door Width</th>
+    <th>Door Height</th>
+    <th>Door Size</th>
+    <th>sideOfHouse</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let house of houses">
+    <td>{{house.street}}</td>
+    <td>{{house.name}}</td>
+    <td>{{house.houseNo}}</td>
+    <td>{{house.window.windowWidth}}</td>
+    <td>{{house.window.windowHeight}}</td>
+    <td>{{house.window.windowSize}}</td>
+    <td>{{house.door.doorWidth}}</td>
+    <td>{{house.door.doorHeight}}</td>
+    <td>{{house.door.doorSize}}</td>
+    <td>{{house.door.sideOfHouse}}</td>
+    <td><button type="submit" class="btn btn-primary" (click)="onHouseClick(house._id)">Update</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="onCancel(house._id)">Delete</button></td>
+    
+  </tr>
+</table>
